@@ -1,3 +1,5 @@
 notebook/assets/developer_survey_2020.zip
 notebook/assets/survey_results_public.csv
 notebook/assets/survey_results_schema.csv
+.ipynb_checkpoints/
+__pycache__

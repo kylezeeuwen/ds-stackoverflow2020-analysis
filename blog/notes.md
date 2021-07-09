@@ -1,16 +1,24 @@
+Candidate Questions:
+---
+ * Can I predict CDN vs US vs AU vs ENG ?
+    * no it appears not on first pass : notebook/milestone/country_prediction_fail_attempt1.ipyn
+
+ * Are there differences in technology interest by region ?
+   * would be stronger if using GDP by sector to determine sector similarities and see if code interest correlates
+
+ * do some groups withold salary info more ?
+   * by country
+   * by age
+   * by education 
+
 Data Quality Notes:
 ---
-  * CompTotal is a mess, refer to ConvertedComp
-  * Should transform columns (discuss how and why):
+  * (DONE) CompTotal is a mess, refer to ConvertedComp
+  * (DONE) Should transform columns (discuss how and why):
     * YearsCode -> exclude 'Less than 1 year' and 'More than 50 years'
     * YearsCodePro -> exclude 'Less than 1 year' and 'More than 50 years'
     * Age1stCode -> exclude 'Younger than 5 years' , 'Older than 85'
 
-Summary Questions:
----
- * Can I predict CDN vs US vs AU vs ENG ?
- * Are there differences in technology interest by region ?
-   * would be stronger if using GDP by sector to determine sector similarities and see if code interest correlates
   
 
 
@@ -20,7 +28,7 @@ Can I predict CDN vs US vs AU vs ENG using the following:
  * Age1stCode
  * ConvertedComp
  * Employment <-- could filter out with this
- * JobFactors
+ * JobFactors <-- throwing this away for now as i have to parse it first
  * JobSat
  * JobSeek <-- could filter out with this  
  * MainBranch
@@ -28,7 +36,6 @@ Can I predict CDN vs US vs AU vs ENG using the following:
  * OpSys
  * OrgSize
  * UndergradMajor
- * WorkWeekHrs
  * WorkWeekHrs
  * YearsCode
  * YearsCodePro
@@ -45,6 +52,8 @@ Interesting what tech you work with questions:
 * PlatformWorkedWith
 * WebframeDesireNextYear
 * WebframeWorkedWith
+* DatabaseDesireNextYear
+* DatabaseWorkedWith
 
 Interesting random thing : 
 ---
@@ -56,3 +65,4 @@ Tick All That Apply Questions
 * NEWJobHuntResearch
 * NEWPurchaseResearch
 * NEWSOSites
+* JobFactors
