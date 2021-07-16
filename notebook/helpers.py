@@ -48,6 +48,9 @@ def _convert_age_series_to_numeric (input_string):
     
     return int(input_string)
 
+def divide_or_zero (a, b):
+    return a / b if b != 0 else 0
+
 def perf_measures(y_actual, y_hat):
     TP = 0
     FP = 0
@@ -72,21 +75,20 @@ def perf_measures(y_actual, y_hat):
 
     # source: https://en.wikipedia.org/wiki/Sensitivity_and_specificity    
     #sensitivity, recall, hit rate, or true positive rate (TPR)
-    TPR = TP / P
+    TPR = divide_or_zero(TP, P)
 
     #specificity, selectivity or true negative rate (TNR)
-    TNR = TN / N
+    TNR = divide_or_zero(TN, N)
 
     #precision or positive predictive value (PPV)
-    PPV = TP / (TP + FP)
+    PPV = divide_or_zero(TP, (TP + FP))
 
     #precision or positive predictive value (PPV)
-    NPV = TN / (TN + FN)
+    NPV = divide_or_zero(TN, (TN + FN))
     
     # accuracy
-    ACC = (TP + TN) / (P + N)
+    ACC = divide_or_zero((TP + TN), (P + N))
         
-#     return (TP, FP, TN, FN, TPR, TNR)
     return {
         "TP": TP,
         "FP": FP,
