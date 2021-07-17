@@ -1,5 +1,6 @@
 
 * https://towardsdatascience.com/what-metrics-should-we-use-on-imbalanced-data-set-precision-recall-roc-e2e79252aeba
+* https://medium.com/@josh_2774/how-do-you-become-a-developer-5ef1c1c68711
 
 Candidate Questions:
 ---
@@ -86,16 +87,53 @@ feature candidate sets
 rows - all countries, country subsets
 rows - 10%, 50%, 100%
 
-(    ) how much faster out of docker. out of jupyter
-(    ) can i script jupyter to python
-(    ) verify 0.1 -> 0.5 -> 1.0
+(DONE) pickle with params
+(DONE) compare against svm
+(DONE) extract greatest co-efficient
+(    ) move some helpers into model_helpers
+(    ) move some helpers into data_preperation
+(DONE) how much faster out of docker. out of jupyter. Not much
+(DONE) can i script jupyter to python- via convert 
+(DONE) verify 0.1 -> 0.5 -> 1.0 - not much benefit
 (    ) look at nunique again
 (    ) start graphing
 (DONE) round before data framing
 (IN PROGRESS) check coefficients
+
 (    ) readd my hand picks
-(    ) compare against svm
-(    ) why are some coefficients missing : 
-           * result_df.query('row_label == "full_country" and cutoff == 250').coefficients
+
+(DONE) why are some coefficients missing : 
+     * result_df.query('row_label == "full_country" and cutoff == 250').coefficients
+     * because those models are just NOPE machines 
 
 real objective -> try to choose each of the countries, pick out the strongest co-efficients. look at num samples to variation in FP/FN/TPP/etc
+
+
+Notes on Lesson 2
+---
+Three Steps to captivate:
+* Pull in reader
+  * title and image
+  * image first, then title to match
+  * "two sentences and an image to capture reader"
+    * asking questions that they have aslo asked
+    * or current events
+* Keep engaged
+  * strong story telling
+     * a story that is relatable to themselves 
+  * personal voice
+  * article structure
+      * up to 3 lines per idea, no more than 5
+* Close Post
+  * reiterate main points
+  * call to action
+    
+* Logistics of post
+  * short and sweet - 1 - 2 pages, 500 - 700 words, make outline, less than 8 min read
+  * use questions to form outline
+    * intro
+    * takeaway 1  
+    * takeaway 2  
+    * takeaway 3
+    * conclusion
+      * ok to post unfinished thoughts  
