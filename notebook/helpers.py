@@ -1,6 +1,8 @@
 import pandas as pd
 import numpy as np
 
+from convert_multiple_choice_to_dataframe import convert_multiple_choice_to_dataframe
+
 def reduce_dataframe_using_min_non_null (input_df, min_non_null_cutoff):
     df = input_df.copy()
     categorical_dummies = df.select_dtypes(include='uint8') # imprecise as uint8 does not imply a dummied categorical column
@@ -29,6 +31,45 @@ def clone_drop_and_convert (input_df):
     df['YearsCode'] = df['YearsCode'].map(_convert_age_series_to_numeric)
     df['YearsCodePro'] = df['YearsCodePro'].map(_convert_age_series_to_numeric)
     df['Age1stCode'] = df['Age1stCode'].map(_convert_age_series_to_numeric)
+        
+    return df
+
+def clone_and_convert_multiple_choice_columns (input_df):
+    df = input_df.copy()
+    
+    multiple_choice_columns = [
+        'DatabaseDesireNextYear',
+        'DatabaseWorkedWith',
+        'DevType',
+        'EdLevel',
+        'Employment',
+        'Ethnicity',
+        'Gender',
+        'JobFactors',
+        'JobSeek',
+        'LanguageDesireNextYear',
+        'LanguageWorkedWith',
+        'MiscTechDesireNextYear',
+        'MiscTechWorkedWith',
+        'NEWCollabToolsDesireNextYear',
+        'NEWCollabToolsWorkedWith',
+        'NEWJobHunt',
+        'NEWJobHuntResearch',
+        'NEWPurchaseResearch',
+        'NEWSOSites',
+        'NEWStuck',
+        'PlatformDesireNextYear',
+        'PlatformWorkedWith',
+        'Sexuality',
+        'WebframeDesireNextYear',
+        'WebframeWorkedWith',
+    ]
+    
+    for column in multiple_choice_columns:
+        dummied_df = convert_multiple_choice_to_dataframe(df[column])
+        df = df.merge(dummied_df, how='inner', left_index=True, right_index=True, validate='1:1')
+        
+    df.drop(columns=multiple_choice_columns, inplace=True)    
     
     return df
     
@@ -90,6 +131,8 @@ def perf_measures(y_actual, y_hat):
     ACC = divide_or_zero((TP + TN), (P + N))
         
     return {
+        "P": P,
+        "N": N,
         "TP": TP,
         "FP": FP,
         "TN": TN,
