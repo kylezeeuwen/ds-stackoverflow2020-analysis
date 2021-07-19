@@ -2,6 +2,9 @@
 * https://towardsdatascience.com/what-metrics-should-we-use-on-imbalanced-data-set-precision-recall-roc-e2e79252aeba
 * https://medium.com/@josh_2774/how-do-you-become-a-developer-5ef1c1c68711
 
+Ethnicity_South Asian <-- probably need to remove this from the results wrt predicting country
+
+
 Candidate Questions:
 ---
  * Can I predict CDN vs US vs AU vs ENG ?

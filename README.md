@@ -54,6 +54,7 @@ The notebooks in the jupyter workspace (i.e., `./notebooks`) are listed below, f
 
 ### Notebooks
 * (BLOG) top_10_countries_measured_by_response_count.ipynb - showing survey responses by country
+* (BLOG) top_10_countries_proportion_of_nope.ipynb - showing modelling results by country, hilighting the dataset imbalance issues
 * basics.ipynb - notebook showing first steps to probe dataset 
 * value_counts.ipynb - notebook showing some drill down steps to probe dataset
 * country_classifier.ipynb - orchestrate the data prep and modelling phases of [CRISP-DM](LINK TODO) 

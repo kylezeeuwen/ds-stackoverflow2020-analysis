@@ -34,10 +34,8 @@ def clone_drop_and_convert (input_df):
         
     return df
 
-def clone_and_convert_multiple_choice_columns (input_df):
-    df = input_df.copy()
-    
-    multiple_choice_columns = [
+def get_multiple_choice_columns ():
+    return [
         'DatabaseDesireNextYear',
         'DatabaseWorkedWith',
         'DevType',
@@ -64,6 +62,11 @@ def clone_and_convert_multiple_choice_columns (input_df):
         'WebframeDesireNextYear',
         'WebframeWorkedWith',
     ]
+
+def clone_and_convert_multiple_choice_columns (input_df):
+    df = input_df.copy()
+    
+    multiple_choice_columns = get_multiple_choice_columns()
     
     for column in multiple_choice_columns:
         dummied_df = convert_multiple_choice_to_dataframe(df[column])
