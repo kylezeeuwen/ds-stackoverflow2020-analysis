@@ -17,10 +17,14 @@ def clone_drop_and_convert (input_df):
         df.set_index('Respondent')
 
     # Exclude CompTotal and CompFreq as they are free form and not in a standard currency, use ConvertedComp which is normalised to annual USD
-    # these would also serve as "unfair" predictors of country so they will skew our results if left in the dataset
-    for raw_compensation_column in ['CompTotal', 'CompFreq', 'CurrencyDesc', 'CurrencySymbol']:
+    for raw_compensation_column in ['CompTotal', 'CompFreq']:
         if raw_compensation_column in df.columns:
             df.drop(columns=[raw_compensation_column], inplace=True)
+
+    # Exclude columns that would obviously directly correlate with country of origin
+    for unfair_predictors in ['CurrencyDesc', 'CurrencySymbol', 'Ethnicity']:
+        if unfair_predictors in df.columns:
+            df.drop(columns=[unfair_predictors], inplace=True)
 
     # these columns are strings but they contain mostly numbers, with a few inequality strings to represent the boundaries,
     # convert them to numeric so we can treat as a quant metric:
@@ -41,7 +45,6 @@ def get_multiple_choice_columns ():
         'DevType',
         'EdLevel',
         'Employment',
-        'Ethnicity',
         'Gender',
         'JobFactors',
         'JobSeek',
