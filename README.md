@@ -55,10 +55,11 @@ The notebooks in the jupyter workspace (i.e., `./notebooks`) are listed below, f
 ### Notebooks
 * (BLOG) top_10_countries_measured_by_response_count.ipynb - showing survey responses by country
 * (BLOG) top_10_countries_proportion_of_nope.ipynb - showing modelling results by country, hilighting the dataset imbalance issues
+* (BLOG) visualise_binary_classifier_results.ipynb - analysis and charts for binary classifiers 
 * basics.ipynb - notebook showing first steps to probe dataset 
 * value_counts.ipynb - notebook showing some drill down steps to probe dataset
 * country_classifier.ipynb - orchestrate the data prep and modelling phases of [CRISP-DM](LINK TODO) 
-* visualise_results.ipynb - analyse modeling results
+
 
 ### Misc
 * assets.* - the contents of the [SO 2020 dataset zip file](LINK TODO) 
