@@ -8,7 +8,7 @@ The focus of this analysis is to look at differences in responses by country and
 The author is a noob data scientist completing the [Udacity Data Science Nano degree](https://www.udacity.com/course/data-scientist-nanodegree--nd025), and the first assignment requires:
 
 * [a repo](https://github.com/kylezeeuwen/ds-stackoverflow2020-analysis/)
-* [a blog](https://medium.com/@kylezeeuwen/does-the-country-change-the-developer-ce18116e905f), which I choose to post on medium
+* [a blog](https://medium.com/@kylezeeuwen/does-the-country-change-the-developer-ce18116e905f)
 
 The classifiers suck and should not be used in any meaningful way, but the journey was bountiful and well documented.
 
