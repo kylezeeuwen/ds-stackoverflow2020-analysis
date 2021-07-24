@@ -4,3 +4,4 @@ notebook/assets/survey_results_schema.csv
 #notebook/pickles
 .ipynb_checkpoints/
 __pycache__
+.python-version

@@ -1,6 +1,8 @@
 #!/bin/sh
 
 virtualenv=${1:-dsstackoverflow}
+pyenv init -
+pyenv virtualenv-init -
 
 if type pyenv
 then
@@ -11,7 +13,7 @@ then
 		pyenv install $python_version --skip-existing
 		pyenv virtualenv --force $python_version $virtualenv && \
 			pyenv activate $venv_name && \
-			pip install -r requirements.txt && \
+			pip3 install -r requirements.txt && \
 			pyenv deactivate $venv_name && \
 			echo $venv_name > .python-version
 	else
