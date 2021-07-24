@@ -5,6 +5,21 @@ import time
 from country_classifier.models import apply_linear_regression_model, apply_linear_svm_model, apply_random_forest_model
 
 def predict_country (rowset_label, columnset_label, imputed_df, cutoffs, country_to_classify, row_sample_rate):
+    '''
+    INPUT:
+    rowset_label - string - label to identify the response subset
+    columnset_label - string - label to identify the column set
+    imputed_df - dataframe - the cleaned dataframe containing survey results
+    cutoffs - array - integer cutoffs to limit input features when building models
+    country_to_classify - string - name of country to attempt to identify in the data
+    row_sample_rate - float - a sample rate to reduce datasize during testing/development
+
+    OUTPUT:
+    results - array - one entry per model, containing fields to identify the model, and model performance results
+
+    Build models to classify survey responses as belonging to a country or not, run the models, and capture performance results
+    '''
+
     is_country = lambda country: 1 if country == country_to_classify else 0
 
     results = []
@@ -71,6 +86,7 @@ def predict_country (rowset_label, columnset_label, imputed_df, cutoffs, country
         
     return results
 
+# attribution: function taken from udacity course materials
 def get_coefficent_weights(coefficients, columns):
     '''
     INPUT:

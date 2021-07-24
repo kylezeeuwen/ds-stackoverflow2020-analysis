@@ -1,25 +1,24 @@
 import pandas as pd
 import numpy as np
 
-from country_classifier.convert_multiple_choice_to_dataframe import convert_multiple_choice_to_dataframe
-
-def _convert_age_series_to_numeric (input_string):
-    if input_string == 'Less than 1 year':
-        return 0
-    if input_string == 'More than 50 years':
-        return 51
-    if input_string == 'Younger than 5 years':
-        return 4
-    if input_string == 'Older than 85':
-        return 86
-
-    # cheap NaN check
-    if input_string != input_string:
-        return input_string
-
-    return int(input_string)
-
 def clone_drop_and_convert (input_df):
+    '''
+    INPUT:
+    X - dataframe - model inputs
+    y - series - binary to indicate if this response is from country or not
+
+    OUTPUT:
+    metrics - performance metrics about the model
+    model - the trained model
+    model_type - string - identifies the model type
+
+    Perform some data transforms
+      * set the Respondent id as the index
+      * drop some currency columns that are processed into a better representation
+      * drop some columns that would directly predict the country
+      * convert the "nearly numeric" series to numeric
+    '''
+
     df = input_df.copy()
     
     # use respondent as the index
@@ -47,3 +46,29 @@ def clone_drop_and_convert (input_df):
     df['Age1stCode'] = df['Age1stCode'].map(_convert_age_series_to_numeric)
         
     return df
+
+def _convert_age_series_to_numeric (input_string):
+    '''
+    INPUT:
+    input_string - either a number of a string inequality statement
+
+    OUTPUT:
+    number - the input converted to an int
+
+    convert the "nearly numeric" survey responses into numerics, with a slight loss of accuracy in how i choose to process inequalities
+    '''
+
+    if input_string == 'Less than 1 year':
+        return 0
+    if input_string == 'More than 50 years':
+        return 51
+    if input_string == 'Younger than 5 years':
+        return 4
+    if input_string == 'Older than 85':
+        return 86
+
+    # cheap NaN check
+    if input_string != input_string:
+        return input_string
+
+    return int(input_string)
