@@ -1,3 +1,4 @@
+
 # Overview
 
 This code in this repo uses the Python [pandas](LINK TODO) and [sklearn](LINK TODO) libraries to analyse the [Stack Overflow 2020 Developer Survey Results](LINK TODO) .
@@ -55,6 +56,7 @@ The notebooks in the jupyter workspace (i.e., `./notebooks`) are listed below, f
 ### Notebooks
 * (BLOG) top_10_countries_measured_by_response_count.ipynb - showing survey responses by country
 * (BLOG) top_10_countries_proportion_of_nope.ipynb - showing modelling results by country, hilighting the dataset imbalance issues
+* (BLOG) multiple_choice_responses.ipynb - show answers by deviation from mean and microsoft sentiment analysis 
 * (BLOG) visualise_binary_classifier_results.ipynb - analysis and charts for binary classifiers 
 * basics.ipynb - notebook showing first steps to probe dataset 
 * value_counts.ipynb - notebook showing some drill down steps to probe dataset
@@ -95,4 +97,5 @@ This is the work of Kyle Zeeuwen. There is some inspiration and probably borrowe
 
 #Acknowledgements
 
-Udacity is so far so good [thumbs up](TODO LINK)
+* Udacity is so far so good [thumbs up](TODO LINK)
+* Cover photo : https://unsplash.com/photos/oMpAz-DN-9I : free via [Unsplash](https://unsplash.com/license) : great photo by [Greg Rakozy](https://unsplash.com/@grakozy)

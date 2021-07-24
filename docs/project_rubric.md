@@ -3,7 +3,7 @@
 As defined [here](https://review.udacity.com/#!/rubrics/1507/view).
 
 ## Code Functionality and Readability
-* (    ) Code is functional.
+* (    ) Code is functional
 * (    ) Code is readable (uses good coding practices - PEP8)
 * (    ) Write code that is well documented and uses functions and classes as necessary.
 
