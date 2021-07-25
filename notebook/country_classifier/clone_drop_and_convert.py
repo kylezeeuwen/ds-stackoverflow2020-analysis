@@ -1,7 +1,8 @@
 import pandas as pd
 import numpy as np
 
-def clone_drop_and_convert (input_df):
+
+def clone_drop_and_convert(input_df):
     '''
     INPUT:
     X - dataframe - model inputs
@@ -20,9 +21,9 @@ def clone_drop_and_convert (input_df):
     '''
 
     df = input_df.copy()
-    
+
     # use respondent as the index
-    if 'Respondent' in df.columns:    
+    if 'Respondent' in df.columns:
         df.set_index('Respondent')
 
     # Exclude CompTotal and CompFreq as they are free form and not in a standard currency, use ConvertedComp which is normalised to annual USD
@@ -44,10 +45,11 @@ def clone_drop_and_convert (input_df):
     df['YearsCode'] = df['YearsCode'].map(_convert_age_series_to_numeric)
     df['YearsCodePro'] = df['YearsCodePro'].map(_convert_age_series_to_numeric)
     df['Age1stCode'] = df['Age1stCode'].map(_convert_age_series_to_numeric)
-        
+
     return df
 
-def _convert_age_series_to_numeric (input_string):
+
+def _convert_age_series_to_numeric(input_string):
     '''
     INPUT:
     input_string - either a number of a string inequality statement

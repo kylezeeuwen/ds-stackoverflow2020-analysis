@@ -1,6 +1,7 @@
 import pandas as pd
 
-def clone_impute_data (input_df, dummy_na, fill_technique):
+
+def clone_impute_data(input_df, dummy_na, fill_technique):
     '''
     INPUT:
     input_df - dataframe - survey results
@@ -20,13 +21,14 @@ def clone_impute_data (input_df, dummy_na, fill_technique):
         if column == 'Country':
             continue
         # for each cat add dummy var, drop original column
-        df = pd.concat([df.drop(column, axis=1), pd.get_dummies(df[column], prefix=column, prefix_sep='_', drop_first=True, dummy_na=dummy_na)], axis=1)    
+        df = pd.concat([df.drop(column, axis=1), pd.get_dummies(
+            df[column], prefix=column, prefix_sep='_', drop_first=True, dummy_na=dummy_na)], axis=1)
 
-    fill_mean = lambda col: col.fillna(col.mean())
-    fill_mode = lambda col: col.fillna(col.mode()[0])
+    def fill_mean(col): return col.fillna(col.mean())
+    def fill_mode(col): return col.fillna(col.mode()[0])
     fill = fill_mean if fill_technique == "Mean" else fill_mode
 
     for column in df.select_dtypes(include=['int64', 'float64']).columns:
         df[column] = fill(df[column])
 
-    return df    
+    return df
