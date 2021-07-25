@@ -61,20 +61,19 @@ That aside the code seeks to analyse the SO 2020 dataset with several objectives
 
 # File Descriptors
 
-Any analysis presented in the blog will have a specific python notebook to show the work and demonstrate reproducability.
+Any analysis presented in [the blog]((https://medium.com/@kylezeeuwen/does-the-country-change-the-developer-ce18116e905f)) will have a specific python notebook to show the work and demonstrate reproducability.
 
 There are some notebook files not used in the blog which are also included in the repo.
 
 The notebooks in the jupyter workspace (i.e., `./notebooks`) are listed below, followed by the list of python helper files and descriptions.
 
 ### Notebooks
-* 1_basics.ipynb - notebook showing first steps to probe dataset 
-* 2_value_counts.ipynb - notebook showing some drill down steps to probe dataset
-* 3_top_10_countries_measured_by_response_count.ipynb - showing survey responses by country
-* 4_multiple_choice_responses.ipynb - show answers by deviation from mean and microsoft sentiment analysis 
-* 5_country_classifier.ipynb - orchestrate the data prep and modelling phases of [CRISP-DM](https://en.wikipedia.org/wiki/Cross-industry_standard_process_for_data_mining) 
-* 6_visualise_binary_classifier_results.ipynb - analysis binary classifier results 
-
+* [1_basics.ipynb](./notebook/1_basics.ipynb) - notebook showing first steps to probe dataset 
+* [2_value_counts.ipynb](./notebook/2_value_counts.ipynb) - notebook showing some drill down steps to probe dataset
+* [3_top_10_countries_measured_by_response_count.ipynb](./notebook/3_top_10_countries_measured_by_response_count.ipynb) - showing survey responses by country
+* [4_multiple_choice_responses.ipynb](./notebook/4_multiple_choice_responses.ipynb) - show answers by deviation from mean and microsoft sentiment analysis 
+* [5_country_classifier.ipynb](./notebook/5_country_classifier.ipynb) - orchestrate the data prep and modelling phases of [CRISP-DM](https://en.wikipedia.org/wiki/Cross-industry_standard_process_for_data_mining) 
+* [6_visualise_binary_classifier_results.ipynb](./notebook/6_visualise_binary_classifier_results.ipynb) - analysis binary classifier results 
 
 ### Misc
 * assets.* - the contents of the [SO 2020 dataset zip file](https://drive.google.com/file/d/1dfGerWeWkcyQ9GX9x20rdSGj7WtEpzBB/view) 
@@ -95,22 +94,18 @@ All notebooks can be rerun to reproduce the results.
 
 If you want to contribute, fork and submit a PR, that would be top notch.
 
-# Developer Notes
-
-Original readme [here](./docs/original_readme.md)
-
-#Licencing
+# Licencing
 
 Go nuts. Really, just get right in there.
 
 [MIT License](./LICENSE)
 
-#Authors
+# Authors
 
 This is the work of Kyle Zeeuwen. There is some inspiration and probably borrowed code from the course presenter Josh Bernhard, specifically this [repo](https://github.com/jjrunner/stackoverflow). 
 
-#Acknowledgements
+# Acknowledgements
 
-* Udacity is so far so good 👍
+* Udacity is so far so good 👍. The review of my first submission was thorough and valuable. Some cliff notes can be found [here](./docs/project_rubric.md) 
 * Cover photo : https://unsplash.com/photos/oMpAz-DN-9I : free via [Unsplash](https://unsplash.com/license) : great photo by [Greg Rakozy](https://unsplash.com/@grakozy)
 * Stack Overflow for conducting the survey and sharing the [results](https://insights.stackoverflow.com/survey/2020) 
