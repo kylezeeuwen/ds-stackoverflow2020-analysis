@@ -29,12 +29,12 @@ As defined [here](https://review.udacity.com/#!/rubrics/1507/view).
 
 # Feedback Round 1
 
-* (    ) more markdown documentation in the notebooks
-* (    ) Notebook 4 more docs make more clear
-* (    ) notebook markdown - Business Context of the analysis
-* (    ) List of questions you are trying to answer with the analysis
-* (    ) Some missing DOCSTRING - specifically compute_multiple_choice_response_stats
-* (    ) Segment code into CRISP-DM. Resource : https://michael-fuchs-python.netlify.app/2020/08/21/the-data-science-process-crisp-dm/
+* (DONE) more markdown documentation in the notebooks
+* (DONE) Notebook 4 more docs make more clear
+* (DONE) notebook markdown - Business Context of the analysis
+* (DONE) List of questions you are trying to answer with the analysis
+* (DONE) Some missing DOCSTRING - specifically compute_multiple_choice_response_stats
+* (DONE) Segment code into CRISP-DM. Resource : https://michael-fuchs-python.netlify.app/2020/08/21/the-data-science-process-crisp-dm/
 
 ```markdown
         Identify the segments that are applicable to the analysis and segment your codes
@@ -46,8 +46,7 @@ As defined [here](https://review.udacity.com/#!/rubrics/1507/view).
         * Evaluate the Results
 ```
 
-* (    ) PEP8 standards - can use autopep8 to lint
-* (    ) Better documentation of data prep (what was dropped, what was imputed, rationale) - It is very important to document the methods used in the analysis and add reasons for using them.
-
+* (DONE) PEP8 standards - can use autopep8 to lint
+* (DONE) Better documentation of data prep (what was dropped, what was imputed, rationale) - It is very important to document the methods used in the analysis and add reasons for using them.
 
 Also you can consider adding introduction / business context for the analysis

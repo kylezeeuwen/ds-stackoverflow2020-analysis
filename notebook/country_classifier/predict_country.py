@@ -47,8 +47,8 @@ def predict_country(rowset_label, columnset_label, imputed_df, cutoffs, country_
         metrics['duration'] = round(time.time() - start, 4)
         results.append(metrics)
 
-        print("model_type=%s rowset_label=%s, columnset_label=%s, cutoff=%s yield columns=%s, ACC=%s, in duration=%ss" % (
-            metrics['model_type'], rowset_label, columnset_label, cutoff, len(X_columns), metrics['ACC'], metrics['duration']))
+        print("country_to_classify=%s model_type=%s rowset_label=%s, columnset_label=%s, cutoff=%s yield columns=%s, ACC=%s, in duration=%ss" % (
+            country_to_classify, metrics['model_type'], rowset_label, columnset_label, cutoff, len(X_columns), metrics['ACC'], metrics['duration']))
 
         X = reduced_x[X_columns]
         y = reduced_x['Country'].map(is_country)
@@ -67,8 +67,8 @@ def predict_country(rowset_label, columnset_label, imputed_df, cutoffs, country_
         metrics['duration'] = round(time.time() - start, 4)
         results.append(metrics)
 
-        print("model_type=%s rowset_label=%s, columnset_label=%s, cutoff=%s yield columns=%s, ACC=%s, in duration=%ss" % (
-            metrics['model_type'], rowset_label, columnset_label, cutoff, len(X_columns), metrics['ACC'], metrics['duration']))
+        print("country_to_classify=%s model_type=%s rowset_label=%s, columnset_label=%s, cutoff=%s yield columns=%s, ACC=%s, in duration=%ss" % (
+            country_to_classify, metrics['model_type'], rowset_label, columnset_label, cutoff, len(X_columns), metrics['ACC'], metrics['duration']))
 
         X = reduced_x[X_columns]
         y = reduced_x['Country'].map(is_country)
@@ -87,14 +87,12 @@ def predict_country(rowset_label, columnset_label, imputed_df, cutoffs, country_
         metrics['duration'] = round(time.time() - start, 4)
         results.append(metrics)
 
-        print("model_type=%s rowset_label=%s, columnset_label=%s, cutoff=%s yield columns=%s, ACC=%s, in duration=%ss" % (
-            metrics['model_type'], rowset_label, columnset_label, cutoff, len(X_columns), metrics['ACC'], metrics['duration']))
+        print("country_to_classify=%s model_type=%s rowset_label=%s, columnset_label=%s, cutoff=%s yield columns=%s, ACC=%s, in duration=%ss" % (
+            country_to_classify, metrics['model_type'], rowset_label, columnset_label, cutoff, len(X_columns), metrics['ACC'], metrics['duration']))
 
     return results
 
 # attribution: function taken from udacity course materials
-
-
 def get_coefficent_weights(coefficients, columns):
     '''
     INPUT:
@@ -115,9 +113,21 @@ def get_coefficent_weights(coefficients, columns):
 
 
 def reduce_dataframe_using_min_non_null(input_df, min_non_null_cutoff):
+    '''
+    INPUT:
+    input_df - dateframe - the imputed survey result set
+    min_non_null_cutoff - int - drop all dummied categorical columns that do not have at least X true values
+
+    OUTPUT:
+    df - dataframe - the imputed survey result set after threshold is applied
+
+    Reduce the number of features in the survey results by dropping dummied categorical 
+    columns that do not have more than a threshold true values.
+    '''    
     df = input_df.copy()
     # imprecise as uint8 does not imply a dummied categorical column
     categorical_dummies = df.select_dtypes(include='uint8')
-    columns_to_drop = categorical_dummies[categorical_dummies.columns[categorical_dummies.sum(
-    ) < min_non_null_cutoff]].columns
+    columns_to_drop = categorical_dummies[ \
+        categorical_dummies.columns[categorical_dummies.sum() < min_non_null_cutoff] \
+    ].columns
     return df.drop(columns=columns_to_drop)

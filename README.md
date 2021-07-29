@@ -68,6 +68,7 @@ There are some notebook files not used in the blog which are also included in th
 The notebooks in the jupyter workspace (i.e., `./notebooks`) are listed below, followed by the list of python helper files and descriptions.
 
 ### Notebooks
+* [0_overview.ipynb](./notebook/0_overview.ipynb) - notebook with markdown stating business context 
 * [1_basics.ipynb](./notebook/1_basics.ipynb) - notebook showing first steps to probe dataset 
 * [2_value_counts.ipynb](./notebook/2_value_counts.ipynb) - notebook showing some drill down steps to probe dataset
 * [3_top_10_countries_measured_by_response_count.ipynb](./notebook/3_top_10_countries_measured_by_response_count.ipynb) - showing survey responses by country
@@ -80,11 +81,7 @@ The notebooks in the jupyter workspace (i.e., `./notebooks`) are listed below, f
 * pickles - the classifier results used in the blog
 
 ### Libraries
-* country_classifier/clone_and_convert_multiple_choice_columns.py - impute multiple choice columns
-* country_classifier/clone_drop_and_convert.py - drop some columns and convert some columns
-* country_classifier/clone_impute_data.py - main imputation function
-* country_classifier/models.py - collection of wrappers around sklearn models
-* country_classifier/predict_country.py - run multiple models with a list of cutoffs on a specific country
+* all libraries are in directories named for the notebook where they are used
 
 # How to interact with project
 
@@ -106,6 +103,6 @@ This is the work of Kyle Zeeuwen. There is some inspiration and probably borrowe
 
 # Acknowledgements
 
-* Udacity is so far so good 👍. The review of my first submission was thorough and valuable. Some cliff notes can be found [here](./docs/project_rubric.md) 
+* Udacity is so far so good 👍. The review of my first submission was thorough and valuable. Some summary notes can be found [here](./docs/project_rubric.md) 
 * Cover photo : https://unsplash.com/photos/oMpAz-DN-9I : free via [Unsplash](https://unsplash.com/license) : great photo by [Greg Rakozy](https://unsplash.com/@grakozy)
 * Stack Overflow for conducting the survey and sharing the [results](https://insights.stackoverflow.com/survey/2020) 
