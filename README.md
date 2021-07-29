@@ -12,6 +12,14 @@ The author is a noob data scientist completing the [Udacity Data Science Nano de
 
 The classifiers suck and should not be used in any meaningful way, but the journey was bountiful and well documented.
 
+## Business Overview
+
+A general exploration of the data is presented, and then several specific business questions are answered:
+
+* Which countries had the most respondents ?
+* Were there any country based biases in the technology preferences surevey responses ?
+* Can we predict a respondents country of origin using their answers, excluding answers that obviously directly predict country ?
+
 # Installation Notes
 
 ## Get the survey results
